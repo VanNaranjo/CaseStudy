@@ -1,0 +1,82 @@
+﻿<!--
+Van Naranjo
+December 9, 2024
+This is the html for pdf reports and will print out reports for both employee and call
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Report</title>
+    <meta charset="utf-8" /> <!-- Defines the character encoding of the page to ensure it handles characters correctly -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo="> <!-- Uses a blank favicon to avoid unnecessary requests for an icon -->
+    <link href="/lib/css/bootstrap.min.css" rel="stylesheet" /> <!-- Imports Bootstrap CSS for responsive layout and styling -->
+    <link href="/css/employeepdf.css" rel="stylesheet" /> <!-- Custom CSS for styling the report page specifically -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Ensures the page is mobile-friendly by adjusting the layout -->
+
+</head>
+<body>
+
+    <!-- Navbar section with navigation links -->
+    <nav class="navbar navbar-expand-md navbar-light bg-primary">
+        <!-- Navbar brand with the Case #2 label -->
+        <a class="navbar-brand mx-3 link-dark" href="#"><strong>Case #2</strong></a>
+
+        <!-- Toggler button for collapsing the navbar on smaller devices -->
+        <button class="navbar-toggler mx-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span> <!-- Bootstrap icon to represent the toggler -->
+        </button>
+
+        <!-- Collapsible content of the navbar that holds the links -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav mx-3">
+                <!-- Link to the Home page -->
+                <li class="nav-item">
+                    <a class="nav-link active link-dark" href="home.html"><strong>Home</strong></a>
+                </li>
+                <!-- Link to the Employee CRUD page -->
+                <li class="nav-item">
+                    <a class="nav-link link-dark" href="employeewithpic.html"><strong>Employee</strong></a>
+                </li>
+                <!-- Link to the Call page -->
+                <li class="nav-item">
+                    <a class="nav-link link-dark" href="employeecall.html"><strong>Call</strong></a>
+                </li>
+                <!-- Link to the Reports page -->
+                <li class="nav-item">
+                    <a class="nav-link link-dark" href="employeepdf.html"><strong>Reports</strong></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main content section of the page -->
+    <img src="img/istockphoto-1412305573-612x612.jpg" alt="callCenter" width="400" height="400" class="mx-auto d-block"> <!-- Call center image centered on the page -->
+    <!-- Main title for the report page -->
+    <h2 class="text-center">HELP DESK</h2>
+    <p class="text-center">v1.0</p> <!-- Displaying the version of the report system -->
+    <!-- Section with two buttons: one for Employee Reports and one for Call Reports -->
+    <div class="row justify-content-center">
+        <div class="row justify-content-center col-12 col-md-6">
+            <div class="col text-center">
+                <!-- Button to generate Employee Reports -->
+                <button id="employeebutton" class="btn btn-primary">Employee Reports</button>
+                <div id="employeelblstatus"></div> <!-- Label for the employee report status -->
+            </div>
+            <div class="col text-center">
+                <!-- Button to generate Call Reports -->
+                <button id="callbutton" class="btn btn-primary">Call Reports</button>
+                <div id="calllblstatus"></div> <!-- Label for the call report status -->
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript libraries included for functionality -->
+    <script src="/lib/js/jquery.min.js"></script> <!-- jQuery library for DOM manipulation -->
+    <script src="/lib/js/bootstrap.min.js"></script> <!-- Bootstrap JS for interactive components like the navbar -->
+    <script src="js/employeepdf.js"></script> <!-- Custom JavaScript file for handling the report generation -->
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿
+/* Container to hold button and text */
+.container {
+    text-align: center;
+    width: 300px;
+}
+
+/* Button style */
+#employeebutton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 15px;
+    margin: 10px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+#callbutton {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 15px;
+    margin: 10px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+

@@ -1,0 +1,152 @@
+﻿<!--
+Van Naranjo
+December 9, 2024
+This is the html for employeecall and will dictate how the website looks like connected with the css
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CALL</title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link href="/lib/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/exercises.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+    <!-- Navbar with navigation links -->
+    <nav class="navbar navbar-expand-md navbar-light bg-primary">
+        <a class="navbar-brand mx-3 link-dark" href="#"><strong>Case #2</strong></a>
+        <button class="navbar-toggler mx-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link link-dark" href="home.html"><strong>Home</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-dark" href="employeewithpic.html"><strong>Employee</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active link-dark" href="employeecall.html" data-bs-toggle="modal" data-bs-target="theModal"><strong>Call</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-dark" href="employeepdf.html"><strong>Reports</strong></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main image displayed on the page -->
+    <img src="img/istockphoto-1412305573-612x612.jpg" alt="callCenter" width="400" height="400" class="mx-auto d-block">
+
+    <!-- Page Title -->
+    <h2 class="text-center">Ticket Issues</h2>
+    <p class="text-center">v1.0</p>
+
+    <!-- Search form -->
+    <form class="d-flex justify-content-center">
+        <input class="form-control" type="search" placeholder="Search" id="srch" aria-label="Search" style="width:10vw;">
+    </form>
+
+    <!-- Employee list section -->
+    <div class="justify-content-center align-items-center row mt-5 ml-1">
+        <div class="col-12 text-center p-3"><h2>Current Employee</h2></div>
+        <div class="list-group col-10 " id="callList" style="height:45vh;">
+        </div>
+    </div>
+
+    <!-- Modal form for updating or deleting employee information -->
+    <form id="EmployeeModalForm" name="EmployeeModalForm" method="post" action="">
+        <div class="modal fade" id="theModal" data-bs-backdrop="static"
+             data-bs-keyboard="false" tabindex="-1" aria-labelledby="theModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title d-none" id="theModalLabel">Employee</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Card Header with Image -->
+                        <div class="card-header text-center bg-primary bg-opacity-50">
+                            <img src="img/istockphoto-1412305573-612x612.jpg" alt="callCenter" width="100" height="100" class="mx-auto d-block rounded-5">
+                        </div>
+                        <p class="text-center"><strong>Update Employee</strong></p>
+                        <!-- Card Body for form inputs -->
+                        <div class="card-body border border-dark rounded-4 p-3 ml-1">
+                            <!-- Problem Dropdown -->
+                            <div class="row">
+                                <div class="col-4" style="font-weight:bold">Problem: </div>
+                                <div class="col-8"><select id="ddlProblem" name="ddlProblem" class="form-control"></select></div>
+                            </div>
+                            <!-- Employee Dropdown -->
+                            <div class="row">
+                                <div class="col-4" style="font-weight:bold">Employee: </div>
+                                <div class="col-8"><select id="ddlEmployee" name="ddlEmployee" class="form-control"></select></div>
+                            </div>
+                            <!-- Technician Dropdown -->
+                            <div class="row">
+                                <div class="col-4" style="font-weight:bold">Technician: </div>
+                                <div class="col-8"><select id="ddlTechnician" name="ddlTechnician" class="form-control"></select></div>
+                            </div>
+                            <!-- Date Opened Label -->
+                            <div class="row">
+                                <div class="col-4" style="font-weight:bold">Date Opened:</div>
+                                <div class="col-8">
+                                    <label id="labelDateOpen"></label>
+                                </div>
+                            </div>
+                            <!-- Date Closed Label (Initially hidden) -->
+                            <div id="rowClosed" class="row">
+                                <div class="col-4" style="font-weight:bold">Date Closed:</div>
+                                <div class="col-8">
+                                    <label id="labelDateClosed"></label>
+                                </div>
+                            </div>
+                            <!-- Close Call Checkbox (Initially hidden) -->
+                            <div id="rowClosedCall" class="row">
+                                <div class="col-4" style="font-weight:bold">Close Call:</div>
+                                <div class="col-8">
+                                    <input type="checkbox" placeholder="enter notes" id="checkBoxClosed" class="my-2" />
+                                </div>
+                            </div>
+                            <!-- Notes Textarea -->
+                            <div class="row">
+                                <div class="col-4" style="font-weight:bold">Notes:</div>
+                                <div class="col-8">
+                                    <textarea placeholder="enter notes" id="TextNotes" name="TextNotes" class="form-control my-2"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal Footer with Buttons -->
+                    <div class="card-footer text-center">
+                        <div class="row m-4 justify-content-center">
+                            <!-- Update and Delete Buttons -->
+                            <input type="button" value="update" id="actionbutton" class="col-3 m-2 btn btn-secondary" />
+                            <input type="button" value="delete" id="deletebutton" class="col-3 m-2 btn btn-secondary" />
+                            <!-- Confirmation dialog for delete -->
+                            <div class="alert alert-danger fade show" role="alert" id="dialog"
+                                 style="width:80vw;margin-top:2vh;">
+                                <input type="button" class="btn btn-secondary mt-3" value="Yes" id="yesbutton" />
+                                <input type="button" class="btn btn-secondary mt-3" value="No" id="nobutton" />
+                            </div>
+                        </div>
+                        <div id="modalstatus" class="text-left mt-3 mb-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- JavaScript scripts for functionality -->
+    <script src="/lib/js/jquery.min.js"></script>
+    <script src="lib/js/jquery.validate.min.js"></script>
+    <script src="/lib/js/bootstrap.min.js"></script>
+    <script src="/js/employeecall.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+﻿<!--
+Van Naranjo
+December 9, 2024
+This is the html for home
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <meta charset="utf-8" /> <!-- Sets the character encoding for the document to UTF-8 for better compatibility -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo="> <!-- Sets a blank favicon to avoid requests for the icon -->
+    <link href="/lib/css/bootstrap.min.css" rel="stylesheet" /> <!-- Links to the Bootstrap CSS library for styling -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Ensures the page is responsive on mobile devices -->
+</head>
+<body>
+
+    <!-- Navbar section -->
+    <nav class="navbar navbar-expand-md navbar-light bg-primary">
+        <!-- Brand/logo link -->
+        <a class="navbar-brand mx-3 link-dark" href="#"><strong>Case #2</strong></a>
+        <!-- Toggler button for collapsing the navbar on smaller screens -->
+        <button class="navbar-toggler mx-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span> <!-- Bootstrap icon for the navbar toggler button -->
+        </button>
+
+        <!-- Collapsible content within the navbar -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link link-dark" href="home.html"><strong>Home</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active link-dark" href="employeewithpic.html" data-bs-toggle="modal" data-bs-target="theModal"><strong>Employee</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-dark" href="employeecall.html"><strong>Call</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-dark" href="employeepdf.html"><strong>Reports</strong></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main content of the page -->
+    <!-- Centered image with dimensions 400x400 pixels -->
+    <img src="img/istockphoto-1412305573-612x612.jpg" alt="callCenter" width="400" height="400" class="mx-auto d-block">
+
+    <!-- HELP DESK title -->
+    <h2 class="text-center">HELP DESK</h2>
+    <p class="text-center">v1.0</p> <!-- Version information displayed at the center -->
+    <!-- Link to the Employee CRUD page with a strong font weight for emphasis -->
+    <p class="text-center">click <a class="nav-link active link-dark" href="employeewithpic.html"><strong>Employee</strong></a> to open the employee list</p>
+
+    <!-- JavaScript libraries and custom script for page functionality -->
+    <script src="/lib/js/jquery.min.js"></script>
+    <script src="/lib/js/bootstrap.min.js"></script>
+    <script src="/js/employeelookup.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="lib/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sample Dialog</title>
+</head>
+<body class="text-center">
+    <input type="button" class="btn btn-secondary mt-3" value="click to decide" id="dialogbutton" />
+    <div class="alert alert-danger fade show" role="alert" id="dialog"
+         style="width:80vw;margin-top:2vh;margin-left:10vw;">
+        <strong>What's it going to be?</strong><p></p>
+        <input type="button" class="btn btn-secondary mt-3" value="yes" id="yesbutton" />
+        <input type="button" class="btn btn-secondary mt-3" value="No" id="nobutton" />
+    </div>
+    <div id="status"></div>
+    <script src="lib/js/jquery.min.js"></script>
+    <script src="js/sampledialog.js"></script>
+</body>
+</html>

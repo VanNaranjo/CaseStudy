@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>CRUD</title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link href="/lib/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/exercises.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-light bg-primary">
+        <a class="navbar-brand mx-3 link-dark" href="#"><strong>Case #1</strong></a>
+        <button class="navbar-toggler mx-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav mx-3">
+                <li class="nav-item">
+                    <a class="nav-link active link-dark" href="home.html"><strong>Home</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active link-dark" href="employeecrud.html" data-bs-toggle="modal" data-bs-target="theModal"><strong>Employee</strong></a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main image displayed on the page -->
+    <img src="img/istockphoto-1412305573-612x612.jpg" alt="callCenter" width="400" height="400" class="mx-auto d-block">
+    <h2 class="text-center">Employees</h2>
+    <p class="text-center">v1.0</p>
+
+    <!-- Employee list section -->
+    <div class="justify-content-center align-items-center row mt-5 ml-1">
+        <div class="col-12 text-center p-3"><h2>Current Employee</h2></div>
+        <div class="list-group col-10 " id="employeeList" style="height:45vh;">
+        </div>
+    </div>
+
+    <form id="EmployeeModalForm" name="EmployeeModalForm" method="post" action="">
+        <!-- Modal for updating or deleting employee information -->
+        <div class="modal fade" id="theModal" data-bs-backdrop="static"
+             data-bs-keyboard="false" tabindex="-1" aria-labelledby="theModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title d-none" id="theModalLabel">Employee</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card-header text-center bg-primary bg-opacity-50">
+                            <img src="img/istockphoto-1412305573-612x612.jpg" alt="callCenter" width="100" height="100" class="mx-auto d-block rounded-5">
+                        </div>
+                        <p class="text-center"><strong>Update Employee</strong></p>
+                        <div class="card-body border border-dark rounded-4 p-3 ml-1">
+                            <div class="row">
+                                <div class="col-4 text-right" style="font-weight:bold;">Title:</div>
+                                <div class="col-8" id="title">
+                                    <input type="text" placeholder="enter title" id="TextBoxTitle" name="TextBoxTitle" class="form-control my-2" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4 text-right" style="font-weight:bold;">First Name:</div>
+                                <div class="col-8" id="firstname">
+                                    <input type="text" placeholder="enter first name" id="TextBoxFirst" name="TextBoxFirst" class="form-control my-2" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4 text-right" style="font-weight:bold;">LastName:</div>
+                                <div class="col-8">
+                                    <input type="text" placeholder="enter last name" id="TextBoxLast" name="TextBoxLast" class="form-control my-2" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4 text-right" style="font-weight:bold;">Phone:</div>
+                                <div class="col-8">
+                                    <input type="text" placeholder="enter phone" id="TextBoxPhone" name="TextBoxPhone" class="form-control my-2" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4" style="font-weight:bold">Email:</div>
+                                <div class="col-8">
+                                    <input type="text" placeholder="enter email" id="TextBoxEmail" name="TextBoxEmail" class="form-control my-2" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4" style="font-weight:bold">Department: </div>
+                                <div class="col-8"><select id="ddlDepartment" name="ddlDepartment" class="form-control"></select></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center">
+                        <div class="row m-4 justify-content-center">
+                            <!--Button for Action and Delete-->
+                            <input type="button" value="update" id="actionbutton" class="col-3 m-2 btn btn-secondary" />
+                            <input type="button" value="delete" id="deletebutton" class="col-3 m-2 btn btn-secondary" />
+                            <!--This is for Yes or No Warning on Delete-->
+                            <div class="alert alert-danger fade show" role="alert" id="dialog"
+                                 style="width:80vw;margin-top:2vh;">
+                                <input type="button" class="btn btn-secondary mt-3" value="Yes" id="yesbutton" />
+                                <input type="button" class="btn btn-secondary mt-3" value="No" id="nobutton" />
+                            </div>
+                        </div>
+                        <div id="modalstatus" class="text-left mt-3 mb-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- JavaScript scripts for functionality -->
+    <script src="lib/js/jquery.min.js"></script>
+    <script src="lib/js/jquery.validate.min.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+    <script src="js/employeevalidation.js"></script>
+
+</body>
+</html>
+
